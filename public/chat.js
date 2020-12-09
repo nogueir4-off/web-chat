@@ -18,7 +18,7 @@ const containerMessage = document.querySelector('.Messages');
 //     painel.style.left = '0px';
 // })
 
-var socket = io('http://localhost:3000')
+var socket = io('https://web-chat-app-v01.herokuapp.com/')
 
 function renderMessage(message) {
 	messageObj = document.createElement('div');
