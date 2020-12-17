@@ -24,7 +24,7 @@ var value;
 io.on('connection', socket => {
 	console.log(`socket conectado: ${socket.id}`);
 
-	socket.on('disconnect', () => {
+	socket.on('disconnecting', () => {
 		users = users.filter(item => item !== value)
 	})
 
