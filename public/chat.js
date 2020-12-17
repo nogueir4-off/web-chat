@@ -114,8 +114,8 @@ function closeName() {
 }
 
 
-// var socket = io('https://web-chat-app-v01.herokuapp.com/')
-var socket = io('http://localhost:3000')
+var socket = io('https://web-chat-app-v01.herokuapp.com/')
+// var socket = io('http://localhost:3000')
 
 var colorYourNow = 'purple';
 var colorTheirNow = 'purple1';
