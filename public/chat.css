@@ -75,7 +75,7 @@ body.dark p {
     font-size: 20px;
     font-weight: bold;
     /*margin: 2px;*/
-    /*margin-bottom: 4px;*/
+    margin-bottom: 4px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -762,7 +762,7 @@ small {
     .container .nameChat h1 {
         font-size: 20px;
         font-weight: bold;
-        margin-bottom: 17px;
+        margin-top: -5px;
         /* color: #72757e; */
         color: #772ce8;
     }
@@ -806,11 +806,11 @@ small {
 
     .sendMessage form button {
         border: none;
-        padding: 16px;
+        padding: 15.2px;
         border-radius: 50%;
         outline: none;
         background-color:#242629;
-        border: 2px solid black;
+        border: 1px solid #0e0e10;
     }
     
     .sendMessage input {
@@ -824,7 +824,7 @@ small {
         border-radius: 50px;
         margin-right: 1px;
         background-color:#242629;
-        border: 2px solid #0d0d0f;
+        border: 1px solid #0e0e10;
     }
 
     .sendMessage form button i {
