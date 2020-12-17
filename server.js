@@ -17,20 +17,43 @@ app.use('/', (req, res) => {
 	res.render('chat.html');
 });
 
-// let messages = []
+let users = []
+
+var value;
 
 io.on('connection', socket => {
 	console.log(`socket conectado: ${socket.id}`);
 
-	// socket.emit('previousMessages', messages);
+	socket.on('disconnect', () => {
+		users = users.filter(item => item !== value)
+	})
 
 	socket.on('sendMessage', data => {
-
 		console.log(data)
-		
-		// messages.push(data);
-	
+
 		socket.broadcast.emit('receivedMessage', data);
+	});
+	
+	socket.on('nameUserNow', name => {
+		nameTxt = name.toString();
+
+		if(users.indexOf(nameTxt) == -1) {
+			users.push(nameTxt);
+			console.log(users);
+
+			socket.emit('nameIsUsed', false);
+		} else {
+			console.log("name is used");
+			console.log(users);
+			
+			socket.emit('nameIsUsed', true);
+		}
+	})
+
+	socket.on('removeThisName', user => {
+		value = user;
+
+		users = users.filter(item => item !== value)
 	})
 })
 

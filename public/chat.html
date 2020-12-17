@@ -7,27 +7,53 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
 
+<!-- 		<a href="https://github.com/nogueir4-off"><h1 class="credits"><i class="fab fa-github"></i> nogueir4-off</h1></a> -->
+	<link rel="icon" href="icon.png" type="image/icon type">
 	<link rel="stylesheet" href="chat.css">
     <script defer src="chat.js"></script>
-	<title>Document</title>
+    <script defer src="chatModify.js"></script>
+	<title>Yarnme</title>
 </head>
 <body>
 	<div class="tableLeft">
-		<h1><i class="fas fa-signal"></i>connected <button id="sideBarClose"><i class="fas fa-bars"></i></button></h1>
-		<div class="peoples">
-			<div class="people"><i class="fas fa-angle-right"></i><p>gabriel1</p></div>
+		<div class="darkmode">
+			<button id="fechar"><i class="fas fa-times"></i></button>
+			<input type="checkbox" class="checkbox" id="checkbox">
+			<label for="checkbox" class="label">
+				<div class="ball"></div>
+				<i class="fas fa-moon"></i>
+				<i class="far fa-sun"></i>
+			</label>
 		</div>
-		<a href="https://github.com/nogueir4-off"><h1 class="credits"><i class="fab fa-github"></i> nogueir4-off</h1></a>
+		<div class="colors">
+			<div class="color um active"></div>
+			<div class="color dois"></div>
+			<div class="color tres"></div>
+			<div class="color quatro"></div>
+		</div>
+		<button id="saveColor">SAVE!</button>
+		<a href="https://github.com/nogueir4-off"><i class="fab fa-github"></i></a>
 	</div>
-	<div class="container">
-		<div class="nameChat"><button id="sideBar"><i class="fas fa-bars"></i></button><h1>@main chat</h1></div>
+	<div class="tableRight">
+		<button id="sideBarClose1"><i class="fas fa-times"></i></button>
+		<img id="imgProfile" src="" alt="">
+		<form>
+			<input type="text" placeholder="enter your name" spellcheck="false" maxlength="20">
+			<small>you are already using that name</small>
+			<small id="small1">name in use</small>
+			<button id="usernameBtn">SAVE!</button>
+		</form>
+	</div>
+	<div class="container show">
+		<div class="nameChat"><button id="sideBar"><i class="fas fa-cog"></i></button><h1>yarnme</h1><button id="nameUser"><i class="fas fa-user"></i></button></div>
+		<!-- <i class="fas fa-user"></i> -->
 		<div class="containerMessages">
 			<div class="Messages">
 			</div>
 		</div>
 		<div class="sendMessage">
 			<form id="chat">
-				<input type="text" maxlength="207">
+				<input type="text" maxlength="207" spellcheck="false">
 				<button><i class="far fa-paper-plane"></i></button>
 			</form>
 			<div class="background"></div>

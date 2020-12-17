@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 @font-face {
     font-family: whitney-bold;
-    src: url('fonts/whitney-bold.otf');
+    src: url('/fonts/whitney-bold.otf');
 }
 
 @font-face {
     font-family: whitney-light;
-    src: url('fonts/whitney-medium.otf');
+    src: url('/fonts/whitney-medium.otf');
 }
 
 * {
@@ -21,12 +21,14 @@ html {
 }
 
 body {
-    font-family: "Roboto";
+    font-family: whitney-bold, "roboto", sans-serif;
     background-color: #16161a;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    transition: background-color 0.4s ease;
     
     flex-wrap: nowrap;
     overflow: hidden;
@@ -35,9 +37,21 @@ body {
     min-height: 90vh;
 }
 
+body.dark {
+    background-color: #fff;
+}
+
+body.dark .background {
+    background-color: #fff;
+}
+
+body.dark p {
+    color: #d1d1d1;
+}
+
 .container .nameChat {
     /* background-color: #72757e; */
-    background-color: #242629;
+    background-color: #1f1f23;
     position: absolute;
     display: flex;
     align-items: center;
@@ -57,82 +71,206 @@ body {
 .container .nameChat h1 {
     font-size: 20px;
     font-weight: bold;
-    margin: 2px;
-    /* color: #72757e; */
-    color: #7f5af0;
-    margin: 0px;
+    /*margin: 2px;*/
+    /*margin-bottom: 4px;*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    color: #772ce8;
 }
 
 .container .nameChat button {
-    display: none;
+    /*display: none;*/
 
     margin: 0;
     padding: 0;
     cursor: pointer;
-    position: absolute;
-    left: 0px;
+    /*position: absolute;*/
+    /*left: 0px;*/
     outline: none;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     background-color: transparent;
     border: none;
+}
+
+.container .nameChat #nameUser {
+    position: absolute;
+    right: 0px;
+    margin-right: 20px;
+}
+
+.container .nameChat #sideBar {
+    position: absolute;
+    left: 0px;
+    margin-left: 20px;
 }
 
 .container .nameChat button:active {
     transform: scale(1.03);
 }
 
+.container .nameChat button i:hover {
+    color: #a970ff;
+}
+
 .container .nameChat button i {
     margin: 0;
     padding: 0;
-    font-size: 30px;
-    color: #7f5af0;
+    transition: color 0.7s ease;
+    font-size: 25px;
+    color: #772ce8;
+}
+
+.tableRight {
+    background-color: #242629;
+
+    transition: all 0.2s ease-out;
+
+    z-index: 3;
+    position: fixed;
+
+    /*right: -500px;*/
+    /*top: 0;*/
+
+    width: 260px;
+    height: 260px;
+    opacity: 1;
+    /*margin-top: 70px;*/
+    /*margin-right: 20px;*/
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tableRight #sideBarClose1 {
+    width: 29px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.tableRight input {
+    border: none;
+    border-radius: 8px;
+    margin: 4px;
+    margin-bottom: 13px;
+    text-align: center;
+    font-weight: 600;
+    /* background-color: #d1d1d1; */
+    transition: all 0.5s ease;
+    background-color: #2b2e31;;
+    color: #d1d1d1;
+    font-size: 15px;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    padding: 4px;
+    padding-bottom: 6px;
+}
+
+.tableRight input::placeholder {
+    color: #5c5c5c;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.tableRight input:focus {
+    color: #2b2b2b;
+    background-color: #9c9c9c;
+}
+
+.tableRight #usernameBtn {
+    margin: 4px;
+    padding-bottom: 2px;
+    background-color: #772ce8;
+    outline: none;
+    transition: background-color 0.7s ease;
+    font-weight: 900;
+    cursor: pointer;
+    width: 200px;
+    height: 33px;
+    letter-spacing: 0.6px;
+    border: none;
+    border-radius: 8px;
+}
+
+.tableRight button i {
+    color: #772ce8;
+    transition: color 0.7s ease;
+    font-size: 25px;
+}
+
+.tableRight button:active {
+    transform: scale(1.03);
+}
+
+.tableRight #sideBarClose1:active {
+    /* transform: rotate(315deg); */
+    transform: scale(0.90);
+}
+
+.tableRight button i:hover {
+    color: #a970ff;
+}
+
+.tableRight #usernameBtn:hover {
+    background-color: #a970ff;
+}
+
+.tableRight img {
+    height: 95px;
+    width: 95px;
+    padding: 1px;
+    background-color: #772ce8;
+    border: 6px solid #772ce8;
+    /* background-color:  #5c5c5c; */
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.tableRight form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .tableLeft {
     background-color: #242629;
 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-out;
 
-    z-index: 2;
+    z-index: 3;
     position: fixed;
 
-    left:-500px;
-    top: 0;
+    /*right: -500px;*/
+    /*top: 0;*/
 
     width: 260px;
-    height: 100vh;
+    height: 260px;
+    opacity: 0;
+    /*margin-top: 70px;*/
+    pointer-events: none;
+    /*margin-right: 20px;*/
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+    border-radius: 15px;
 
-.tableLeft h1{
-    color: #72757e;
-    background-color: #171a1c;
-
-    /* border-bottom: 2px solid black; */
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    padding: 0;
-    padding-top: 3px;
-    padding-bottom: 5px;
-    font-weight: lighter;
-    
-    width: 260px;
-    height: 50px;
-    margin: 0px;
-}
-
-.tableLeft i {
-    position: relative;
-    top: 3.4px;
-    right: 5px;
-    color: #2cb67d;
-    font-size: 15px;
+    flex-direction: column;
 }
 
 .tableLeft button {
@@ -141,41 +279,79 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    margin-right: -14px;
-    margin-left: 25px;
+    
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.tableLeft button i {
+    color: #772ce8;
+    transition: color 0.7s ease;
+    font-size: 25px;
 }
 
 .tableLeft button:active {
     transform: scale(1.03);
 }
 
-.tableLeft .credits {
-    position: absolute;
-    font-family: whitney-light, sans-serif;
+.tableLeft button i:hover {
+    color: #a970ff;
+}
+
+.tableLeft #saveColor {
+    position: unset;
+    margin: 4px;
+    padding-bottom: 2px;
+    background-color: #772ce8;
+    outline: none;
+    transition: background-color 0.7s ease;
+    font-weight: 900;
+    cursor: pointer;
+    width: 200px;
+    height: 33px;
+    letter-spacing: 0.6px;
+    border: none;
+    border-radius: 8px;
+}
+
+.tableLeft a {
+    width: 29px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
     
-    /* border-top: 2px solid black; */
-    /* border-right: 2px solid #242629; */
-    font-weight: bold;
-    font-size: 20px;
-    left: 0;
-    bottom: 0px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-
-.tableLeft .credits i {
-    color: #72757e;    
-    position: relative;
-    top: 1.4px;
-    font-size: 18px;
-}
-
-
-.tableLeft .fas.fa-bars {
-    position: relative;
-    top: 1px;
-    color: #7f5af0;
-    margin: 0;
+.tableLeft a i {
+    color: #1e1e1e;
     font-size: 25px;
+}
+
+#small1 {
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: relative;
+    bottom: 10.5px;
+    color: #f25f4c;
+    margin-bottom: -10px;
+}
+
+small {
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: relative;
+    bottom: 10.5px;
+    color: #f25f4c;
+    margin-bottom: -10px;
 }
 
 .peoples {
@@ -199,11 +375,12 @@ body {
     margin: 0;
     font-size: 17px;
     padding: 0;
-    color: #7f5af0;
+    color: #772ce8;
 }
 
 .container {
     transition: all 0.5s ease;
+    pointer-events: none;
     width: 100vw;
     height: 100vh;
     opacity: 1;
@@ -211,12 +388,15 @@ body {
 
 .container.show {
     opacity: 0.3;
+    pointer-events: none;
+    filter: blur(1px);
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left:0;
+    transition: background-color 0.4s ease;
     background-color: #16161a;
     z-index: 3;
     width: 100%;
@@ -227,7 +407,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
 
     bottom: 0px;
     left: 0px;
@@ -245,8 +425,8 @@ body {
     margin: 0;
     margin-bottom: -20px;
     outline: none;
-    background-color:#242629;
-    border: 1px solid black;
+    background-color:#1f1f23;
+    border: 1px solid #0e0e10;
 }
 
 .sendMessage form button:active {
@@ -254,7 +434,11 @@ body {
 }
 
 .sendMessage input:active {
-    transform: scale(1.01);
+    -webkit-transform: scale(0.99);
+       -moz-transform: scale(0.99);
+        -ms-transform: scale(0.99);
+         -o-transform: scale(0.99);
+            transform: scale(0.99);
 }
 
 .sendMessage input {
@@ -270,13 +454,14 @@ body {
     margin: 0;
     margin-bottom: -18px;
     margin-right: 1px;
-    background-color:#242629;
-    border: 1px solid black;
+    background-color:#1f1f23;
+    color: #e6e6e6;
+    border: 1px solid #0e0e10;
 }
 
 .sendMessage form button i {
     font-size: 20px;
-    color: #7f5af0;
+    color: #772ce8;
 }
 
 .Messages {
@@ -305,15 +490,16 @@ body {
     width: 100%;
 
 
-    margin: 5px;
+    margin: 3px;
 }
 
 .Message p {
-    background-color: #7f5af0;
-    padding: 15px;
-    border-radius: 10px;
+    /*background-color: #772ce8;*/
+    padding: 12px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    /* border-radius: 10px; */
     color: #e6e6e6;
-    /*color: #d1d1d1;*/
 
     min-width: 80px;
     max-width: 400px;
@@ -331,16 +517,12 @@ body {
     word-wrap: break-word;
 
     -ms-word-break: break-word;
-/*    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;*/
 }
 
 .Message .nick {
     color: #343a40;
-    margin-bottom: 5px;
-    margin-top: -5px;
+    margin-bottom: 2px;
+    margin-top: 0px;
 }
 
 .Messages .Message:first-child {
@@ -364,6 +546,90 @@ body {
     float: right;
 }
 
+.Message.Their.purple1 p{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    background-color: #772ce8;
+    float: left;
+}
+
+/*.Message.Your p{
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background-color: #a970ff;
+}*/
+.Message.Their.purple1 p{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    background-color: #772ce8;
+    float: left;
+}
+
+.Message.Their.green1 p{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    background-color: #2ecf76;
+    float: left;
+}
+
+.Message.Their.blue1 p{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    background-color: #033aae;
+    float: left;
+}
+
+.Message.Their.orange1 p{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    background-color: #e2563b;
+    float: left;
+}
+
+.Message.Your.purple p{
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background-color: #a970ff;
+}
+
+
+.Message.Your.green p{
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background-color: #bdc473;
+}
+
+
+.Message.Your.blue p{
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background-color: #588ca4;
+}
+
+
+.Message.Your.orange p{
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-top-right-radius: 14px;
+    background-color: #d3ce47;
+}
+
+
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -377,23 +643,102 @@ body {
   border-radius: 10px;
 }
 
+.colors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.color {
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
+    margin: 3px;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+
+.color:hover {
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.color.active {
+    height: 48px;
+    transition: all 0.2s ease-out;
+    width: 48px;
+    border: 3px solid #000; 
+}
+
+.color.um {
+    background: linear-gradient(100deg, #772ce8 9%, #a970ff 99%) 
+}
+
+.color.dois {
+    background: linear-gradient(100deg, #b9ec8f 9%, #2ecf76 99%) 
+}
+ 
+.color.tres {
+    background: linear-gradient(100deg, #033aae 9%, #588ca4 99%) 
+}
+
+.color.quatro {
+    background: linear-gradient(100deg, #d7cf13 9%, #f43710 99%) 
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.label {
+    background-color: #111;
+    display: flex;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    justify-content: space-between;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    height: 25px;
+    width: 80px; 
+}
+
+.ball {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    height: 19px;
+    width: 19px;
+    transition: transform 0.3s ease-out;
+}
+
+.checkbox:checked + .label .ball {
+    -webkit-transform: translateX(54px);
+       -moz-transform: translateX(54px);
+        -ms-transform: translateX(54px);
+         -o-transform: translateX(54px);
+            transform: translateX(54px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+    margin: 5px;
+}
+
+.fa-sun {
+    color: #f39c12;
+    margin: 5px;
+}
+
 @media screen and (max-width: 500px) {
-    .tableLeft {
-        background-color: #242629;
-        position: absolute;
-        left:-260px;
-        transition: all 0.3s ease;
-        z-index: 2;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 260px;
-    }
-
-    .tableLeft .credits {
-        height: 61px;
-    }
-
     .container .nameChat {
         /* background-color: #72757e; */
         background-color: #242629;
@@ -414,45 +759,55 @@ body {
     .container .nameChat h1 {
         font-size: 20px;
         font-weight: bold;
-        margin: 2px;
+        margin-bottom: 17px;
         /* color: #72757e; */
-        color: #7f5af0;
-        margin: 0px;
+        color: #772ce8;
     }
     
     .container .nameChat button {
         margin: 0;
         padding: 0;
-        position: absolute;
-        left: 0px;
+/*        position: absolute;
+        left: 0px;*/
         outline: none;
-        margin-left: 20px;
+        /*margin-left: 20px;*/
         background-color: transparent;
         border: none;
     }
+/*
+    .tableRight {
+        position: absolute;
+        left: unset;
+        top: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }*/
+
     
     .container .nameChat button i {
         margin: 0;
+        margin-bottom: 2px;
         padding: 0;
-        font-size: 25px;
-        color: #7f5af0;
+        font-size: 20px;
+        color: #772ce8;
     }
 
     .tableLeft .fas.fa-bars {
         position: relative;
         top: 0.5px;
-        color: #7f5af0;
+        color: #772ce8;
         margin: 0;
         font-size: 25px;
     }
 
     .sendMessage form button {
         border: none;
-        padding: 15.3px;
+        padding: 16px;
         border-radius: 50%;
         outline: none;
         background-color:#242629;
-        border: 1px solid black;
+        border: 2px solid black;
     }
     
     .sendMessage input {
@@ -466,12 +821,12 @@ body {
         border-radius: 50px;
         margin-right: 1px;
         background-color:#242629;
-        border: 1px solid black;
+        border: 2px solid #0d0d0f;
     }
 
     .sendMessage form button i {
         font-size: 20px;
-        color: #7f5af0;
+        color: #772ce8;
     }
 
     .background {
@@ -485,9 +840,10 @@ body {
     }
 
     .Message p {
-        background-color: #7f5af0;
-        padding: 10px;
-        border-radius: 10px;
+        /*background-color: #772ce8;*/
+        padding: 12px;
+        padding-top: 6px;
+        padding-bottom: 8px;
     
         
         /*min-width: 100px; */
@@ -515,7 +871,7 @@ body {
         width: 100%;
 
 
-        margin: 5px;
+        margin: 3px;
     }
 
     .Messages .Message:last-child {
