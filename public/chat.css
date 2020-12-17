@@ -762,7 +762,7 @@ small {
     .container .nameChat h1 {
         font-size: 20px;
         font-weight: bold;
-        margin-top: -5px;
+        margin-top: 0px;
         /* color: #72757e; */
         color: #772ce8;
     }
@@ -792,7 +792,7 @@ small {
         margin: 0;
         margin-bottom: 2px;
         padding: 0;
-        font-size: 20px;
+        font-size: 25px;
         color: #772ce8;
     }
 
